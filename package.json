@@ -2,7 +2,7 @@
   "name": "my-react-app",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "https://camilagrahl.github.io/To-Do-List-App/",
+  "homepage": "https://camilagrahl.github.io/To-Do-List/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
