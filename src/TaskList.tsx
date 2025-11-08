@@ -1,5 +1,6 @@
 import { Task } from './types';
-import { Card, CardContent, List, ListItem, ListItemText, Button, Typography, Box } from '@mui/material';
+import { Card, CardContent, List, Button, Typography, ListItemText } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface TaskListProps {
     tasks: Task[];
@@ -15,37 +16,44 @@ export function TaskList({ tasks, toggleTask, removeTask }: TaskListProps) {
                     <Typography>No hay tareas aún.</Typography>
                 ) : (
                     <List>
-                        {tasks.map(t => (
-                            <ListItem
-                                key={t.id}
-                                style={{
-                                    border: '1px solid #ffdbfaff',
-                                    backgroundColor: '#ffd4f8ff',
-                                    borderRadius: 8,
-                                    marginBottom: 8,
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center'
-                                }}
-                            >
-                                <ListItemText
-                                    primary={t.text}
+                        <AnimatePresence>
+                            {tasks.map(t => (
+                                <motion.div
+                                    key={t.id}
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 10 }}
+                                    transition={{ duration: 0.7 }}
                                     style={{
-                                        textDecoration: t.done ? 'line-through' : 'none',
-                                        cursor: 'pointer',
-                                        textAlign: 'left'
+                                        border: '1px solid #ffdbfaff',
+                                        backgroundColor: '#ffd4f8ff',
+                                        borderRadius: 8,
+                                        marginBottom: 8,
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        padding: '8px 12px'
                                     }}
-                                    onClick={() => toggleTask(t.id)}
-                                />
-                                <Button
-                                    variant="contained"
-                                    style={{ backgroundColor: 'whitesmoke' }}
-                                    onClick={() => removeTask(t.id)}
                                 >
-                                    🗑️
-                                </Button>
-                            </ListItem>
-                        ))}
+                                    <ListItemText
+                                        primary={t.text}
+                                        style={{
+                                            textDecoration: t.done ? 'line-through' : 'none',
+                                            cursor: 'pointer',
+                                            textAlign: 'left'
+                                        }}
+                                        onClick={() => toggleTask(t.id)}
+                                    />
+                                    <Button
+                                        variant="contained"
+                                        style={{ backgroundColor: '#f3e5f5' }}
+                                        onClick={() => removeTask(t.id)}
+                                    >
+                                        🗑️
+                                    </Button>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
                     </List>
                 )}
             </CardContent>
