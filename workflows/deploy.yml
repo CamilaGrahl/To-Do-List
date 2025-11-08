@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - main  # o la rama principal que uses
+      - gh-pages
 
 jobs:
   build-and-deploy:
