@@ -28,11 +28,11 @@ npm run dev
 4. Construir para producción:
 npm run build
 
-5 El despliegue se realiza automáticamente en GitHub Pages a través del script:
+5. El despliegue se realiza automáticamente en GitHub Pages a través del script:
 npm run deploy
 
 
-##Tecnologías
+## Tecnologías
 - React
 - vite
 - TypeScript
