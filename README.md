@@ -31,6 +31,7 @@ npm run build
 5 El despliegue se realiza automáticamente en GitHub Pages a través del script:
 npm run deploy
 
+
 ##Tecnologías
 - React
 - vite
