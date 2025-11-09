@@ -6,6 +6,7 @@ Esta es una aplicación de lista de tareas desarrollada con React y TypeScript +
 
 ### Parte 1
 🍪 Persistencia con localStorage: Las tareas se guardan en el navegador y se cargan automáticamente al abrir la aplicación.
+
 🍪 Separación de componentes: La aplicación se dividió en dos componentes principales:
   - TaskInput: encargado de agregar nuevas tareas.
   - TaskList: encargado de mostrar, marcar y eliminar tareas.
