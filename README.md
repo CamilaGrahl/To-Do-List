@@ -33,6 +33,7 @@ npm run deploy
 
 
 ## Tecnologías
+- javascript
 - React
 - vite
 - TypeScript
